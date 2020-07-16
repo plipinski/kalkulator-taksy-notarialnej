@@ -26,7 +26,8 @@
         } else {
           result = ((((v - 2000000) * 0.0025 + 6770) / 2) * 0.70) / 2;
         }
-        document.getElementById("result").innerHTML("Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value") + "</b> wynosi: <b>" + result + ".</b>");
+        console.log(result);
+        document.getElementById("result").innerHTML("Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value").value + "</b> wynosi: <b>" + result + ".</b>");
       }
     </script>  
   </head>
