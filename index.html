@@ -11,7 +11,7 @@
     <script>
       function recalculate() {
         var e = document.getElementById("value");
-        var val = e.value;
+        var val = e.value.trim();
         val = val.replace(' ', '');
         val = val.replace('.', '');
         var v = parseFloat(val);
