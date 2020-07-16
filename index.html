@@ -30,7 +30,7 @@
           result = ((((v - 2000000) * 0.0025 + 6770) / 2) * 0.70) / 2;
         }
         result = 10 * Math.round(result / 10);
-        document.getElementById("result").innerHTML = "Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value").value + "</b> wynosi: <b>" + result + "zł.</b>";
+        document.getElementById("result").innerHTML = "Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value").value + "</b> wynosi: <b>" + result + "zł + " + (result * 0.23).toFixed(2) + "zł VAT.</b>";
       }
       
       function isEnter() {
