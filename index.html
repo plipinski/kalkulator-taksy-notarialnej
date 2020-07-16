@@ -29,6 +29,12 @@
         result = 10 * Math.ceil(result / 10);
         document.getElementById("result").innerHTML = "Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value").value + "</b> wynosi: <b>" + result + "zł.</b>";
       }
+      
+      function isEnter() {
+        if(event.keyCode == 13) {
+          recalculate();
+        }
+      }
     </script>  
   </head>
   <body>
@@ -39,7 +45,7 @@
 
     <section class="main-content">
         <label>Wybierz wartość lokalu:</label>
-        <input name="value" id="value"/><br/> 
+        <input name="value" id="value"  onkeydown="isEnter()"/><br/> 
         <button onclick="recalculate()">Przelicz</button>
       <p id="result"></p>
     </section>
