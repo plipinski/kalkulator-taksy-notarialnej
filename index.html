@@ -16,6 +16,31 @@
     </section>
 
     <section class="main-content">
+      <form>
+        <label>Wybierz wartość lokalu:</label>
+        <input name="value" id="value"/> 
+        <button onclick="recalculate()">Przelicz</button>
+      </form>
+      <p id="result"></p>
     </section>
+    <script>
+      function recalculate() {
+        var e = document.getElementById("value");
+        var v = parseFloat(e.options[e.selectedIndex].value);
+        var result = 0;
+        if (isNaN(v)) {
+          alert("Wartość lokalu musi być liczbą!");
+        } else 
+        if (v < 1000000) {
+          result = ((((v - 60000) * 0.004 + 1010) / 2) * 0.8) / 2;
+        } else
+        if (v < 2000000) {
+          result = ((((v - 1000000) * 0.002 + 4770) / 2) * 0.75) / 2;
+        } else {
+          result = ((((v - 2000000) * 0.0025 + 6770) / 2) * 0.70) / 2;
+        }
+        document.getElementById("result").innerHTML("Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value") + "</b> wynosi: <b>" + result + ".</b>");
+      }
+    </script>  
   </body>
 </html>
