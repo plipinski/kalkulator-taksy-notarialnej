@@ -25,12 +25,12 @@
           result = ((((v - 60000) * 0.004 + 1010) / 2) * 0.8) / 2;
         } else
         if (v < 2000000) {
-          result = ((((v - 1000000) * 0.002 + 4770) / 2) * 0.75) / 2;
+          result = ((((v - 1000000) * 0.002 + 4770) / 2) * 0.8) / 2;
         } else {
-          result = ((((v - 2000000) * 0.0025 + 6770) / 2) * 0.70) / 2;
+          result = ((((v - 2000000) * 0.0025 + 6770) / 2) * 0.8) / 2;
         }
         result = 10 * Math.round(result / 10);
-        var total = result * 1.23 + 419.40;
+        var total = result * 1.23 + 474.75;
         document.getElementById("result").innerHTML = "Wartość taksy notarialnej dla lokalu o wartości <b>" + document.getElementById("value").value + "</b> wynosi: <b>" + result + "zł + " + (result * 0.23).toFixed(2) + "zł VAT.</b><br/>" +
           "Łączne koszty dla nabywcy: <b>" + total.toFixed(2) + "zł.</b>";
       }
